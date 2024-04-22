@@ -23,6 +23,12 @@ class Room(CommonModel):
         max_length=80,
         default="서울",
     )
+    category = models.ForeignKey(
+        "categories.Category",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
 
     price = models.PositiveIntegerField()
     rooms = models.PositiveIntegerField()
@@ -59,6 +65,7 @@ class Amenity(CommonModel):
     description = models.CharField(
         max_length=150,
         null=True,
+        blank=True,
     )
 
     def __str__(self) -> str:

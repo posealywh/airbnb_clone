@@ -11,5 +11,6 @@ class CommonModel(models.Model):
         auto_now=True,
     )
 
+    # Do not want to push the data to the DB
     class Meta:
         abstract = True
