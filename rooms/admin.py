@@ -10,9 +10,10 @@ class RoomAdmin(admin.ModelAdmin):
         "name",
         "price",
         "kind",
+        "total_amenities",
+        "rating",
         "owner",
         "created_at",
-        "updated_at",
     )
 
     # list filter
@@ -26,6 +27,8 @@ class RoomAdmin(admin.ModelAdmin):
         "kind",
         "amenities",
     )
+
+    search_fields = ("owner__username",)
 
 
 @admin.register(Amenity)
